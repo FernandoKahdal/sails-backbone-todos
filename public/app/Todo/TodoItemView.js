@@ -21,7 +21,6 @@ function ItemView(_, Backbone, template) {
       });
       var html = this.template(tplData);
       this.$el.html(html);
-      this.$title = $('[type="text"]')
       return this;
     },
     toggleCompleted: function toggleCompleted(e) {
