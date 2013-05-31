@@ -2,6 +2,7 @@ define(['backbone', 'Todo/TodoItemView'],
 function CollectionView(Backbone, TodoItemView) {
 
   return Backbone.View.extend({
+    className: 'todos',
     tagName: 'ul',
     initialize: function initialize() {
       this.listenTo(this.model, 'change', this.render);

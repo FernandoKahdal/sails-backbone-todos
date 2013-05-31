@@ -12,7 +12,7 @@ function(Backbone, TodoCollectionView, template) {
       var html = this.template(this.model.toJSON());
       var todosEl = this.todosView.render().el;
       this.$el.html(html);
-      this.$('.todos').append(todosEl);
+      this.$('.content').append(todosEl);
       return this;
     }
   });
