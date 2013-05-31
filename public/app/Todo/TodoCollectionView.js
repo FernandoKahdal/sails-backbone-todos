@@ -5,7 +5,6 @@ function CollectionView(Backbone, TodoItemView) {
     className: 'todos',
     tagName: 'ul',
     initialize: function initialize() {
-      this.listenTo(this.model, 'change', this.render);
     },
     render: function() {
       this.$el.html('');
