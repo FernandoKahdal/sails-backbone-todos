@@ -1,6 +1,6 @@
 <script id='todo-template' type='text/html-template'>
   <form>
-    <input type='checkbox' name='completed' <%= checked %> />
-    <input type='text' name='title' value='<%= title %>' />
+    <input type='checkbox' class='completed' name='completed' <%= checked %> />
+    <input type='text' class='title <%= lineThrough %>' name='title' value='<%= title %>' />
   </form>
 </script>
