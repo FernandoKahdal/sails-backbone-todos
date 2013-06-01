@@ -1,0 +1,44 @@
+.todos {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.todos .add-new {
+  border: solid .05em black;
+  background-color: rgb(107, 231, 107);
+  margin: 0;
+  color: white;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+.todo .note {
+  height: 1.5em;
+  width: 30em;
+  background-color: #ffffdf;
+  border: solid .1em transparent;
+  border-bottom: solid .1em #e7e7e7;
+  padding-left: .5em;
+  padding-bottom: .25em;
+  padding-right: .5em;
+}
+
+.todo .completed {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+}
+
+.todo .delete {
+  margin: 0;
+  color: lightcoral;
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 1.3em;
+}
+
+.todo .delete:hover {
+  icon: hand;
+}
