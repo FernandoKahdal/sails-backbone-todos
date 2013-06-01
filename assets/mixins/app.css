@@ -1,9 +1,15 @@
 body{
   background-color: #e7e7e7;
+  padding-left: .5em;
 }
 
-#app {
-  margin-left: 5em;
+.title {
+  display: inline-block;
+  text-shadow: .1em .1em .1em rgba(0,0,0,0.2);
+}
+
+.content {
+  display: inline-block;
 }
 
 .todos {
@@ -11,7 +17,18 @@ body{
   padding-left: 0;
 }
 
-.todo .title {
+.todos .add-new {
+  border: solid .05em black;
+  background-color: rgb(107, 231, 107);
+  margin: 0;
+  color: white;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+.todo .note {
   height: 1.5em;
   width: 30em;
   background-color: #ffffdf;
@@ -20,10 +37,6 @@ body{
   padding-left: .5em;
   padding-bottom: .25em;
   padding-right: .5em;
-}
-
-.todo .title:hover {
-
 }
 
 .todo .completed {
