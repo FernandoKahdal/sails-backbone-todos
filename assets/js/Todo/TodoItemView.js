@@ -15,10 +15,12 @@ function ItemView(_, Backbone, template) {
     template: template,
     events: {
       'click [type="checkbox"]': 'toggleCompleted',
-      'change [type="text"]': 'updateTitle'
+      'change [type="text"]': 'updateTitle',
+      'click .delete': 'destroyModel'
     },
     initialize: function initialize() {
       this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'destroy', this.remove);
       this.model.on('change:completed', this.updateStrikeThrough, this);
     },
     render: function render() {
@@ -33,6 +35,10 @@ function ItemView(_, Backbone, template) {
     },
     updateTitle: function updateTitle(e) {
       this.model.save({title: e.target.value});
+    },
+    destroyModel: function remove(e) {
+      this.model.destroy();
+      e.preventDefault();
     }
   });
 
