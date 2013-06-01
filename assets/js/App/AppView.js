@@ -1,18 +1,17 @@
-define(['backbone', 'Todo/TodoCollectionView', 'App/AppLayoutTemplate'],
-function(Backbone, TodoCollectionView, template) {
+define(['underscore','backbone', 'Todo/TodoCollectionView', 'Todo/NewTodoView', 'helpers/template'],
+function(_, Backbone, TodoCollectionView, NewTodoView, templateHelper) {
   return Backbone.View.extend({
-    template: template,
-    events: {
-    },
+    template: templateHelper('#app-template'),
     initialize: function initialize() {
-      this.todosView = new TodoCollectionView({ collection: this.model.get('todos') });
-      this.listenTo(this.model, 'change', this.render);
+      var todos = this.model.get('todos');
+      this.todosView = new TodoCollectionView({ collection: todos });
+      this.newTodoView = new NewTodoView({ collection: todos })
     },
     render: function render() {
-      var html = this.template(this.model.toJSON());
-      var todosEl = this.todosView.render().el;
-      this.$el.html(html);
-      this.$('.content').append(todosEl);
+      this.$el.html(this.template(this.model.toJSON()));
+      var $todos = this.$('.todos-container');
+      $todos.append(this.todosView.el);
+      $todos.append(this.newTodoView.render().el);
       return this;
     }
   });
