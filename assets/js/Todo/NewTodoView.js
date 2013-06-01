@@ -3,6 +3,7 @@ function NewTodoView(_, Backbone, Todo) {
   var tpl = $('#new-todo-template').html().trim();
   var template = _(tpl).template();
   return Backbone.View.extend({
+    tagName: 'span',
     template: template,
     events: {
       'click': 'createBlankTodo'
