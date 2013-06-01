@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: './app',
+  baseUrl: './assets/js',
   shim: {
     'backbone': {
       deps: ['underscore', 'jquery'],
@@ -10,10 +10,9 @@ requirejs.config({
     }
   },
   paths: {
-    main: '../main',
-    backbone: '../lib/backbone',
-    underscore: '../lib/underscore',
-    jquery: '../lib/jquery'
+    backbone: 'lib/backbone',
+    underscore: 'lib/underscore',
+    jquery: 'lib/jquery'
   }
 });
 
