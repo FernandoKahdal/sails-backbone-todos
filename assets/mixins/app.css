@@ -37,3 +37,7 @@ body{
   font-style: italic;
   color: rgba(0,0,0,0.4);
 }
+
+.todo .delete {
+  border: none;
+}
