@@ -14,8 +14,8 @@ function ItemView(_, Backbone, template) {
     tagName: 'li',
     template: template,
     events: {
-      'click [type="checkbox"]': 'toggleCompleted',
-      'change [type="text"]': 'updateTitle',
+      'click .completed': 'toggleCompleted',
+      'change .note': 'updateTitle',
       'click .delete': 'destroyModel'
     },
     initialize: function initialize() {
