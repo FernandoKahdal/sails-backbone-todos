@@ -1,10 +1,8 @@
-define(['underscore','backbone', 'Todo/Todo'],
-function NewTodoView(_, Backbone, Todo) {
-  var tpl = $('#new-todo-template').html().trim();
-  var template = _(tpl).template();
+define(['underscore','backbone', 'Todo/Todo', 'helpers/template'],
+function NewTodoView(_, Backbone, Todo, templateHelper) {
   return Backbone.View.extend({
     tagName: 'span',
-    template: template,
+    template: templateHelper('#new-todo-template'),
     events: {
       'click': 'createBlankTodo'
     },
