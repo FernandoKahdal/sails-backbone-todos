@@ -8,4 +8,32 @@ body{
 
 .todos {
   list-style-type: none;
+  padding-left: 0;
+}
+
+.todo .title {
+  height: 1.5em;
+  width: 30em;
+  background-color: #ffffdf;
+  border: solid .1em transparent;
+  border-bottom: solid .1em #e7e7e7;
+  padding-left: .5em;
+  padding-bottom: .25em;
+  padding-right: .5em;
+}
+
+.todo .title:hover {
+
+}
+
+.todo .completed {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+}
+
+.line-through {
+  text-decoration: line-through;
+  font-style: italic;
+  color: rgba(0,0,0,0.4);
 }
