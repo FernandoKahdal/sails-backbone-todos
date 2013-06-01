@@ -2,11 +2,10 @@ define(['underscore','backbone', 'Todo/Todo', 'helpers/template'],
 function NewTodoView(_, Backbone, Todo, templateHelper) {
   return Backbone.View.extend({
     tagName: 'span',
+    className: 'todo',
     template: templateHelper('#new-todo-template'),
     events: {
       'click': 'createBlankTodo'
-    },
-    initialize: function initialize() {
     },
     render: function render() {
       var html = this.template();
