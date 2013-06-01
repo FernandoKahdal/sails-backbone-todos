@@ -5,7 +5,7 @@ function(Backbone, TodoCollectionView, template) {
     events: {
     },
     initialize: function initialize() {
-      this.todosView = new TodoCollectionView({ model: this.model.get('todos') });
+      this.todosView = new TodoCollectionView({ collection: this.model.get('todos') });
       this.listenTo(this.model, 'change', this.render);
     },
     render: function render() {
