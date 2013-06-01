@@ -1,15 +1,17 @@
-define(['backbone', 'Todo/Todo'],
-function NewTodoView(Backbone, Todo) {
+define(['underscore','backbone', 'Todo/Todo'],
+function NewTodoView(_, Backbone, Todo) {
+  var tpl = $('#new-todo-template').html().trim();
+  var template = _(tpl).template();
   return Backbone.View.extend({
-    tagName: 'button',
-    className: 'icon-plus add-new',
+    template: template,
     events: {
       'click': 'createBlankTodo'
     },
     initialize: function initialize() {
     },
     render: function render() {
-      this.$el.html('Add New Todo');
+      var html = this.template();
+      this.$el.html(html);
       return this;
     },
     createBlankTodo: function createBlankTodo(e) {
