@@ -1,7 +1,8 @@
-define(['underscore','backbone', 'Todo/Todo'],
-function(_, Backbone, Todo) {
+define(['underscore', 'jquery'],
+function(_, $) {
   return function templateHelper(selector) {
     var tpl = $(selector).html().trim();
-    return _(tpl).template();
+    var raw = _(tpl).unescape();
+    return _(raw).template();
   };
 });
