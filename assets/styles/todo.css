@@ -3,7 +3,7 @@
   padding-left: 0;
 }
 
-.todos .add-new {
+.todo .add-new {
   border: solid .05em black;
   background-color: rgb(107, 231, 107);
   margin: 0;
