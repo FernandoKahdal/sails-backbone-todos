@@ -1,10 +1,16 @@
 define(['underscore', 'backbone', 'Todo/TodoItemTemplate'],
 function ItemView(_, Backbone, template) {
 
+  function decorator(model) {
+    var data = model.toJSON();
+    return _({
+      checked: data.completed ? 'checked' : '',
+      lineThrough: data.completed ? 'line-through' : ''
+    }).extend(data);
+  }
+
   return Backbone.View.extend({
-    className: function() {
-      return 'todo-' + this.model.id;
-    },
+    className: 'todo',
     tagName: 'li',
     template: template,
     events: {
@@ -13,13 +19,11 @@ function ItemView(_, Backbone, template) {
     },
     initialize: function initialize() {
       this.listenTo(this.model, 'change', this.render);
+      this.model.on('change:completed', this.updateStrikeThrough, this);
     },
     render: function render() {
-      var tpl = this.model.toJSON();
-      var tplData = _(tpl).extend({
-        checked: tpl.completed ? 'checked' : ''
-      });
-      var html = this.template(tplData);
+      var data = decorator(this.model);
+      var html = this.template(data);
       this.$el.html(html);
       return this;
     },
