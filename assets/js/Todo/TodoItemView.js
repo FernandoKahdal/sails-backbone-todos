@@ -1,5 +1,5 @@
-define(['underscore', 'backbone', 'Todo/TodoItemTemplate'],
-function ItemView(_, Backbone, template) {
+define(['underscore', 'backbone', 'helpers/template'],
+function ItemView(_, Backbone, templateHelper) {
 
   function decorator(model) {
     var data = model.toJSON();
@@ -12,7 +12,7 @@ function ItemView(_, Backbone, template) {
   return Backbone.View.extend({
     className: 'todo',
     tagName: 'li',
-    template: template,
+    template: templateHelper('#todo-template'),
     events: {
       'click .completed': 'toggleCompleted',
       'change .note': 'updateTitle',
