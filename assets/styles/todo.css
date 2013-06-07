@@ -4,7 +4,6 @@
 }
 
 .todo .add-new {
-  border: solid .05em black;
   background-color: rgb(107, 231, 107);
   margin: 0;
   color: white;
@@ -12,6 +11,9 @@
   padding-right: .5em;
   padding-top: .25em;
   padding-bottom: .25em;
+  border: none;
+  border-bottom: solid .1em white;
+  border-right: solid .1em white;
 }
 
 .todo .note {
@@ -33,10 +35,11 @@
 
 .todo .delete {
   margin: 0;
-  color: lightcoral;
+  color: #f30;
   cursor: pointer;
   vertical-align: middle;
   font-size: 1.3em;
+  text-shadow: 0 .1em white;
 }
 
 .todo .delete:hover {
